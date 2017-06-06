@@ -134,6 +134,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\klasa.cs" />
+    <Compile Include="Models\Nauczyciel.cs" />
+    <Compile Include="Models\ocena.cs" />
+    <Compile Include="Models\ocena_rodzaj.cs" />
+    <Compile Include="Models\przedmiot.cs" />
+    <Compile Include="Models\semestr.cs" />
+    <Compile Include="Models\Uczen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
