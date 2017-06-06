@@ -16,7 +16,7 @@ namespace Dziennik_Lekcyjny.Controllers
         {
             Nauczyciel nauczyciel = new Nauczyciel { Imie = "Adam", Nazwisko = "Stano" };
             db.Nauczyciel.Add(nauczyciel);
-          //  db.SaveChanges();
+            db.SaveChanges();
             return View();
         }
     }
