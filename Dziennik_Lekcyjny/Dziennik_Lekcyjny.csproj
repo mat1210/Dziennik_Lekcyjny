@@ -146,6 +146,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706071545349_InitialCreate.cs" />
+    <Compile Include="Migrations\201706071545349_InitialCreate.Designer.cs">
+      <DependentUpon>201706071545349_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Karta_Przedmiotu.cs" />
     <Compile Include="Models\klasa.cs" />
     <Compile Include="Models\Nauczyciel.cs" />
@@ -179,6 +184,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706071545349_InitialCreate.resx">
+      <DependentUpon>201706071545349_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
