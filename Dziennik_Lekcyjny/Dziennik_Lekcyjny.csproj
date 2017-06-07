@@ -142,9 +142,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\dziennikContext.cs" />
+    <Compile Include="DAL\dziennikInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Karta_Przedmiotu.cs" />
     <Compile Include="Models\klasa.cs" />
     <Compile Include="Models\Nauczyciel.cs" />
     <Compile Include="Models\ocena.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="Models\przedmiot.cs" />
     <Compile Include="Models\semestr.cs" />
     <Compile Include="Models\Uczen.cs" />
+    <Compile Include="Models\Waga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

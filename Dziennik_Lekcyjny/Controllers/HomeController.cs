@@ -14,9 +14,9 @@ namespace Dziennik_Lekcyjny.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            Uczen Uczen = new Uczen { Imie = "Adam", Nazwisko = "Stano" };
-            db.uczniowie.Add(Uczen);
-            db.SaveChanges();
+           Uczen Uczen = new Uczen { Imie = "Adam", Nazwisko = "Stano" };
+           db.uczniowie.Add(Uczen);
+           db.SaveChanges();
             return View();
         }
     }

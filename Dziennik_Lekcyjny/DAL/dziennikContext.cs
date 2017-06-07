@@ -14,6 +14,12 @@ namespace Dziennik_Lekcyjny.DAL
         {
 
         }
+
+        static dziennikContext()
+        {
+            Database.SetInitializer<dziennikContext>(new dziennikInitializer());
+        }
+        public DbSet<Karta_Przedmiotu>Karta_Przedmiotu { get; set; }
         public DbSet<przedmiot> przedmioty { get; set; }
         public DbSet<Uczen> uczniowie { get; set; }
         public DbSet<Nauczyciel> Nauczyciel { get; set; }
@@ -21,6 +27,8 @@ namespace Dziennik_Lekcyjny.DAL
         public DbSet<ocena_rodzaj> Ocena_rodzaj { get; set; }
         public DbSet<semestr> semestr { get; set; }
         public DbSet<klasa> klasa { get; set; }
+        public DbSet<Waga> waga { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

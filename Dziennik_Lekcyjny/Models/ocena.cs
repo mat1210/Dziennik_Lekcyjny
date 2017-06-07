@@ -4,7 +4,5 @@
     {
         public int OcenaId { get; set; }
         public int Ocena { get; set; }
-        public virtual przedmiot przedmiot { get; set; }
-        public virtual ocena_rodzaj ocena_rodzaj { get; set; }
     }
 }

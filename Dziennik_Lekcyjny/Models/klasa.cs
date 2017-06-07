@@ -10,6 +10,6 @@ namespace Dziennik_Lekcyjny.Models
         public int KlasaId { get; set; }
         public string Nazwa { get; set; }
         public virtual Uczen Uczen { get; set; }
-     //   public virtual Nauczyciel Nauczyciel { get; set; }
+        public virtual ICollection<Uczen> uczen { get; set; }
     }
 }

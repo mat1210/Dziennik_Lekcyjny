@@ -12,11 +12,8 @@ namespace Dziennik_Lekcyjny.Models
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
 
-     //   public virtual klasa klasa { get; set; }
-        public virtual Uczen uczen { get; set; }
-        public virtual przedmiot przedmiot { get; set; }
-        public virtual ocena ocena { get; set; }
-        public virtual semestr semestr { get; set; }
-        public virtual ocena_rodzaj ocena_rodzaj { get; set; }
+        public virtual ICollection<przedmiot> przedmiot { get; set; }
+
+
     }
 }

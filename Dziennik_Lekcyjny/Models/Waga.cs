@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Dziennik_Lekcyjny.Models
 {
-    public class semestr
+    public class Waga
     {
-        public int semestrId { get; set; }
-        public int Numer_semestru { get; set; }
+        public int WagaId { get; set; }
+        public string waga { get; set; }
     }
 }

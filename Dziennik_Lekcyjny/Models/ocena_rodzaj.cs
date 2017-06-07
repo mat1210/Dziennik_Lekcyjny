@@ -9,8 +9,7 @@ namespace Dziennik_Lekcyjny.Models
     {
         public int Ocena_rodzajId { get; set; }
         public string Nazwa { get; set; }
-        public string Semestr { get; set; }
-       // public virtual semestr semestr { get; set; }
-        public virtual przedmiot przedmiot { get; set; }
+        public string wagaId { get; set; }
+        public virtual ICollection<Waga> waga { get; set; }
     }
 }
