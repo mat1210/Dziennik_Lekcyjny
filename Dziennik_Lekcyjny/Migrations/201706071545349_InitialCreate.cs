@@ -105,41 +105,22 @@ namespace Dziennik_Lekcyjny.Migrations
                 c => new
                     {
                         UczenId = c.Int(nullable: false, identity: true),
-                        KlasaId = c.Int(nullable: false),
                         Imie = c.String(),
                         Nazwisko = c.String(),
-                        klasa_KlasaId = c.Int(),
                         Karta_Przedmiotu_Karta_PrzedmiotuId = c.Int(),
                     })
                 .PrimaryKey(t => t.UczenId)
-                .ForeignKey("dbo.klasa", t => t.klasa_KlasaId)
+           
                 .ForeignKey("dbo.Karta_Przedmiotu", t => t.Karta_Przedmiotu_Karta_PrzedmiotuId)
-                .Index(t => t.klasa_KlasaId)
+               
                 .Index(t => t.Karta_Przedmiotu_Karta_PrzedmiotuId);
             
-            CreateTable(
-                "dbo.klasa",
-                c => new
-                    {
-                        KlasaId = c.Int(nullable: false, identity: true),
-                        Nazwa = c.String(),
-                        Uczen_UczenId = c.Int(),
-                        Uczen_UczenId1 = c.Int(),
-                    })
-                .PrimaryKey(t => t.KlasaId)
-                .ForeignKey("dbo.Uczen", t => t.Uczen_UczenId)
-                .ForeignKey("dbo.Uczen", t => t.Uczen_UczenId1)
-                .Index(t => t.Uczen_UczenId)
-                .Index(t => t.Uczen_UczenId1);
-            
+           
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Uczen", "Karta_Przedmiotu_Karta_PrzedmiotuId", "dbo.Karta_Przedmiotu");
-            DropForeignKey("dbo.klasa", "Uczen_UczenId1", "dbo.Uczen");
-            DropForeignKey("dbo.klasa", "Uczen_UczenId", "dbo.Uczen");
-            DropForeignKey("dbo.Uczen", "klasa_KlasaId", "dbo.klasa");
             DropForeignKey("dbo.semestr", "Karta_Przedmiotu_Karta_PrzedmiotuId", "dbo.Karta_Przedmiotu");
             DropForeignKey("dbo.przedmiot", "Karta_Przedmiotu_Karta_PrzedmiotuId", "dbo.Karta_Przedmiotu");
             DropForeignKey("dbo.ocena_rodzaj", "Karta_Przedmiotu_Karta_PrzedmiotuId", "dbo.Karta_Przedmiotu");
@@ -147,10 +128,8 @@ namespace Dziennik_Lekcyjny.Migrations
             DropForeignKey("dbo.ocena", "Karta_Przedmiotu_Karta_PrzedmiotuId", "dbo.Karta_Przedmiotu");
             DropForeignKey("dbo.Nauczyciel", "Karta_Przedmiotu_Karta_PrzedmiotuId", "dbo.Karta_Przedmiotu");
             DropForeignKey("dbo.przedmiot", "Nauczyciel_NauczycielId", "dbo.Nauczyciel");
-            DropIndex("dbo.klasa", new[] { "Uczen_UczenId1" });
-            DropIndex("dbo.klasa", new[] { "Uczen_UczenId" });
+            
             DropIndex("dbo.Uczen", new[] { "Karta_Przedmiotu_Karta_PrzedmiotuId" });
-            DropIndex("dbo.Uczen", new[] { "klasa_KlasaId" });
             DropIndex("dbo.semestr", new[] { "Karta_Przedmiotu_Karta_PrzedmiotuId" });
             DropIndex("dbo.Waga", new[] { "ocena_rodzaj_Ocena_rodzajId" });
             DropIndex("dbo.ocena_rodzaj", new[] { "Karta_Przedmiotu_Karta_PrzedmiotuId" });
@@ -158,7 +137,7 @@ namespace Dziennik_Lekcyjny.Migrations
             DropIndex("dbo.przedmiot", new[] { "Karta_Przedmiotu_Karta_PrzedmiotuId" });
             DropIndex("dbo.przedmiot", new[] { "Nauczyciel_NauczycielId" });
             DropIndex("dbo.Nauczyciel", new[] { "Karta_Przedmiotu_Karta_PrzedmiotuId" });
-            DropTable("dbo.klasa");
+    
             DropTable("dbo.Uczen");
             DropTable("dbo.semestr");
             DropTable("dbo.Waga");

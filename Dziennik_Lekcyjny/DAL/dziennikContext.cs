@@ -26,9 +26,8 @@ namespace Dziennik_Lekcyjny.DAL
         public DbSet<ocena> Ocena { get; set; }
         public DbSet<ocena_rodzaj> Ocena_rodzaj { get; set; }
         public DbSet<semestr> semestr { get; set; }
-        public DbSet<klasa> klasa { get; set; }
+      
         public DbSet<Waga> waga { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
