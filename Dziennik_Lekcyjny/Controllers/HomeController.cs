@@ -13,6 +13,7 @@ namespace Dziennik_Lekcyjny.Controllers
     {
         private dziennikContext db = new dziennikContext();
         // GET: Home
+        //jjj
         public ActionResult Index()
         {
             var Nauczyciel = db.Nauczyciel.ToList();
